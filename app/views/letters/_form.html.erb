@@ -1,0 +1,7 @@
+<%= simple_form_for(letter) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :message %>
+  <%= f.association :from %>
+  <%= f.association :to %>
+  <%= f.button :submit %>
+<% end %>
