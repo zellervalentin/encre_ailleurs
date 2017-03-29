@@ -18,8 +18,8 @@
       <tr>
         <td><%= letter.title %></td>
         <td><%= letter.message %></td>
-        <td><%= letter.from_id %></td>
-        <td><%= letter.to_id %></td>
+        <td><%= letter.from %></td>
+        <td><%= letter.to %></td>
         <td><%= link_to 'Show', letter %></td>
         <td><%= link_to 'Edit', edit_letter_path(letter) %></td>
         <td><%= link_to 'Destroy', letter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
