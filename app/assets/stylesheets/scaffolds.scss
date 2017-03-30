@@ -4,7 +4,7 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
-  margin: 33px;
+  margin: 0;
 }
 
 p, ol, ul, td {
@@ -35,6 +35,7 @@ a {
 
 th {
   padding-bottom: 5px;
+  padding-right: 10em;
 }
 
 td {
@@ -86,4 +87,46 @@ div {
 
 label {
   display: block;
+}
+
+//Roxane
+
+.navbar.navbar-default{
+  background-color: #741F1F;
+  border-radius: 0px;
+  border: none;
+
+    ul.navcontact{
+      color: #FEF2A0;
+    }
+
+    ul.nav a{
+      color: #FEF2A0;
+      background-color: #741F1F;
+    }
+
+    .navbar-brand{
+    }
+
+    ul.nav a:hover, ul.nav a:focus, ul.nav a:active {
+      color: #E98B50;
+      background-color: #741F1F;
+      border: 2px;
+      border-bottom-color: #741F1F;
+    }
+
+    ul.dropdown-menu{
+      background-color: #741F1F;
+      color: #FEF2A0;
+    }
+
+    a.navbar-header{
+      float:left;
+    }
+}
+
+
+
+.mon_compte{
+float: right;
 }
