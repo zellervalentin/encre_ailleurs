@@ -3,8 +3,17 @@ class LettersController < ApplicationController
 
   # GET /letters
   # GET /letters.json
+  def sent
+    @sents = Letter.where(:from_id => current_user.id)
+  end
+
+  def received
+    @receiveds = Letter.where(:to_id => current_user.id)
+  end
+
   def index
-    @letters = Letter.where(:from_id => current_user.id).or(Letter.where(:to_id => current_user.id))
+   # @letters = Letter.where(:from_id => current_user.id).or(Letter.where(:to_id => current_user.id))
+   @letters = sent.all + received.all
   end
 
   # GET /letters/1
