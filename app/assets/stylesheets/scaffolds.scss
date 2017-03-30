@@ -127,6 +127,11 @@ label {
 
 
 
-.mon_compte{
-float: right;
+.navbar-brand {
+  padding-top:0.3em;
+}
+
+.nav.navbar-nav {
+  float:right;
+  margin-right: -4em;
 }
