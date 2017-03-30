@@ -1,0 +1,65 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Messages reçus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Objets</th>
+      <th>Message</th>
+      <th>De</th>
+      <th>À</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @receiveds.each do |letter| %>
+      <tr>
+        <td><%= image_tag letter.from.gravatar_url %></td>
+        <td><%= letter.title %></td>
+        <td><%= letter.message %></td>
+        <td><%= letter.from %></td>
+        <td><%= letter.to %></td>
+        <td><%= link_to 'Voir', letter %></td>
+        <td><%= link_to 'Éditer', edit_letter_path(letter) %></td>
+        <td><%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Messages envoyés</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Message</th>
+      <th>From</th>
+      <th>To</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sents.each do |letter| %>
+      <tr>
+        <td><%= letter.title %></td>
+        <td><%= letter.message %></td>
+        <td><%= letter.from %></td>
+        <td><%= letter.to %></td>
+        <td><%= link_to 'Voir', letter %></td>
+        <td><%= link_to 'Éditer', edit_letter_path(letter) %></td>
+        <td><%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nouvelle lettre', new_letter_path %>
