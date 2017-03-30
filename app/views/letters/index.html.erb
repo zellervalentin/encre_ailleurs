@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th></th>
       <th>Title</th>
       <th>Message</th>
       <th>From</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @receiveds.each do |letter| %>
       <tr>
+        <td><%= image_tag letter.from.gravatar_url %></td>
         <td><%= letter.title %></td>
         <td><%= letter.message %></td>
         <td><%= letter.from %></td>

@@ -11,6 +11,8 @@
 #
 
 class User < ApplicationRecord
+  include Gravtastic
+  gravtastic
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,6 +20,7 @@ class User < ApplicationRecord
   validates_presence_of :first_name
   validates_presence_of :last_name
   has_many :letters
+
 
   def to_s
     "#{first_name} #{last_name}"
