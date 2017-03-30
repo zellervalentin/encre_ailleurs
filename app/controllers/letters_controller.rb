@@ -4,7 +4,7 @@ class LettersController < ApplicationController
   # GET /letters
   # GET /letters.json
   def index
-    @letters = Letter.all
+    @letters = Letter.where(:from_id => current_user.id).or(Letter.where(:to_id => current_user.id))
   end
 
   # GET /letters/1
@@ -25,6 +25,7 @@ class LettersController < ApplicationController
   # POST /letters.json
   def create
     @letter = Letter.new(letter_params)
+    @letter.from_id = current_user.id
 
     respond_to do |format|
       if @letter.save
