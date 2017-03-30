@@ -1,6 +1,10 @@
 <%= simple_form_for(user) do |f| %>
+  <%= f.input :avatar, as: :file %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
+  <%= f.input :birthday, as: :datetime, start_year: 1900,
+                              end_year: Date.today.year - 12, discard_day: true,
+                              order: [:day, :month, :year] %>
   <%= f.input :email %>
   <%= f.input :password %>
   <%= f.button :submit %>
