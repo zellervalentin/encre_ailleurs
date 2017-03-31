@@ -18,7 +18,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= image_tag user.gravatar_url %></td>
+        <td><%= image_tag user.gravatar_url, class:'img-circle' %></td>
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.age %></td>

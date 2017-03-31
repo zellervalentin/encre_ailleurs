@@ -1,7 +1,7 @@
 <%= simple_form_for(letter) do |f| %>
-  <%= f.input :title %>
+  <%= f.association :to, label:'Destinataire' %>
+  <%= f.input :title, label:"Titre" %>
   <%= f.input :from, :as => :hidden, :value => current_user.id %>
-  <%= f.association :to %>
   <%= f.input :message %>
-  <%= f.button :submit %>
+  <%= f.button :submit, label:'Envoyer' %>
 <% end %>
