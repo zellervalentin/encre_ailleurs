@@ -2,3 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.sent {
+  margin-bottom: 4%;
+}
+
+.title {
+  font-size: 2em;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.message {
+  display: inline-block;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.btn {
+  font-size: 2em;
+  margin-left: 20%;
+}

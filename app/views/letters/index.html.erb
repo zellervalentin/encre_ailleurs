@@ -1,66 +1,62 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Messages reçus</h1>
+<h2 class="sent">Messages reçus</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Objets</th>
-      <th>Message</th>
-      <th>De</th>
-      <th>À</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @receiveds.each do |letter| %>
-      <tr>
-        <td><%= image_tag letter.from.gravatar_url %></td>
-        <td><%= letter.title %></td>
-        <td><%= letter.message %></td>
-        <td><%= letter.from %></td>
-        <td><%= letter.to %></td>
-        <td><%= link_to 'Voir', letter %></td>
-        <td><%= link_to 'Éditer', edit_letter_path(letter) %></td>
-        <td><%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %></td>
-      </tr>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+          <%= image_tag letter.from.gravatar_url, class:'img-circle' %>
+          <div>
+            <%= link_to letter.from, letter.from %>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div class="title"><%= letter.title %></div>
+          <span class="message"><%= letter.message %></span>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+        <%= link_to 'Voir', letter %>
+        <%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+
+    <div class="row">
+      <div class="col-xs-6 col-sm-4"></div>
+      <div class="col-xs-6 col-sm-4"><%= link_to 'Nouvelle lettre', new_letter_path, class:'btn btn-default' %></div>
+    </div>
 
 <br>
 
-<h1>Messages envoyés</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Message</th>
-      <th>From</th>
-      <th>To</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<h2 class="sent">Messages envoyés</h2>
 
-  <tbody>
+
     <% @sents.each do |letter| %>
-      <tr>
-        <td><%= letter.title %></td>
-        <td><%= letter.message %></td>
-        <td><%= letter.from %></td>
-        <td><%= letter.to %></td>
-        <td><%= link_to 'Voir', letter %></td>
-        <td><%= link_to 'Éditer', edit_letter_path(letter) %></td>
-        <td><%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %></td>
-      </tr>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4">
+
+          <%= image_tag letter.to.gravatar_url, class:'img-circle' %>
+          <div>
+            <%= link_to letter.to, letter.to %>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-sm-4">
+          <div class="title"><%= letter.title %></div>
+          <span class="message"><%= letter.message %></span>
+        </div>
+        <div class="col-xs-6 col-sm-4">
+        <%= link_to 'Voir', letter %>
+        <%= link_to 'Éditer', edit_letter_path(letter) %>
+        <%= link_to 'Supprimer', letter, method: :delete, data: { confirm: 'Êtes-vous certain?' } %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
 
 <br>
 
-<%= link_to 'Nouvelle lettre', new_letter_path %>
+
 
