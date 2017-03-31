@@ -25,13 +25,8 @@ ActiveRecord::Schema.define(version: 20170330152125) do
   end
 
   create_table "users", force: :cascade do |t|
-<<<<<<< HEAD
     t.string   "first_name",             default: "", null: false
     t.string   "last_name",              default: "", null: false
-=======
-    t.string   "first_name"
-    t.string   "last_name"
->>>>>>> final
     t.string   "email",                  default: "", null: false
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
@@ -47,11 +42,8 @@ ActiveRecord::Schema.define(version: 20170330152125) do
     t.boolean  "admin"
     t.integer  "age"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-<<<<<<< HEAD
     t.index ["first_name"], name: "index_users_on_first_name", unique: true, using: :btree
     t.index ["last_name"], name: "index_users_on_last_name", unique: true, using: :btree
-=======
->>>>>>> final
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
