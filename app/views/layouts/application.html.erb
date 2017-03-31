@@ -9,20 +9,6 @@
   </head>
 
   <body>
-<<<<<<< HEAD
-    <% if user_signed_in? %>
-      <li>
-        <%= link_to('Letters', letters_path) %>
-        <%= link_to('Edit', edit_user_path(current_user)) %>
-        <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-      </li>
-    <% else %>
-      <li>
-        <%= link_to('Login', new_user_session_path)  %>
-      </li>
-    <% end %>
-    <%= yield %>
-=======
     <nav class="navbar navbar-default">
   <a class="navbar-brand" href=""><%= image_tag 'logo.png'%></a>
   <div class="container">
@@ -66,6 +52,5 @@
 </nav>
 
     <div class="container"><%= yield %></div>
->>>>>>> final
   </body>
 </html>
