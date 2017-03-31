@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users
   get "/pages/:page" => "pages#home"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root 'pages#home'
+  root 'letters#index'
 end
