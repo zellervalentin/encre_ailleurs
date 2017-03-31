@@ -9,6 +9,7 @@
   </head>
 
   <body>
+<<<<<<< HEAD
     <% if user_signed_in? %>
       <li>
         <%= link_to('Letters', letters_path) %>
@@ -21,5 +22,50 @@
       </li>
     <% end %>
     <%= yield %>
+=======
+    <nav class="navbar navbar-default">
+  <a class="navbar-brand" href=""><%= image_tag 'logo.png'%></a>
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="../pages/home.html">Accueil</a></li>
+        <!--<li><a href="#contact">L'association</a></li>-->
+        <li><a href="../pages/about.html">À propos</a></li>
+        <!--<li><a href="#contact">Témoignages</a></li>-->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Mon compte<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to('Lettres', letters_path) %>
+                <%= link_to('Paramètres', edit_user_path(current_user)) %>
+                <%= link_to('Déconnexion', destroy_user_session_path, :method => :delete) %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to('Se Connecter', new_user_session_path)  %>
+              </li>
+            <% end %>
+            <!--<li role="separator" class="divider"></li>
+            <li class="dropdown-header">Nav header</li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>-->
+          </ul>
+        </li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div>
+</nav>
+
+    <div class="container"><%= yield %></div>
+>>>>>>> final
   </body>
 </html>
